@@ -1,0 +1,320 @@
+/* 全局样式 */
+:root {
+    --primary-color: #1D4ED8; /* 科技感蓝色 */
+    --primary-light: #3B82F6; /* 活力蓝 */
+    --primary-hover: #60A5FA; /* 淡蓝色过渡效果 */
+    --bg-color: #F9FAFB;
+    --text-color: #1F2937;
+    --border-color: #E5E7EB;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* 头部样式 */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #4B5563;
+}
+
+/* 表单容器样式 */
+.form-container {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* 表单元素样式 */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+select, input[type="text"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: var(--white);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+select:focus, input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* 复选框组样式 */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 0.5rem;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+}
+
+/* 按钮样式 */
+.submit-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 0.875rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* 结果容器样式 */
+.results-container {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    padding: 2rem;
+    min-height: 200px;
+    margin-bottom: 2rem;
+    display: none; /* 初始隐藏，通过JS显示 */
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    color: #6B7280;
+    font-size: 0.875rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header h2 {
+        font-size: 1.25rem;
+    }
+    
+    .form-container, .results-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem 0.75rem;
+    }
+    
+    header {
+        margin-bottom: 2rem;
+    }
+    
+    header h1 {
+        font-size: 1.75rem;
+    }
+    
+    button {
+        width: 100%;
+    }
+}
+
+/* 结果区域的额外样式 */
+.results-container {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    padding: 2rem;
+    min-height: 200px;
+    margin-bottom: 2rem;
+    display: none; /* 初始隐藏，通过JS显示 */
+}
+
+.results-container h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.placeholder-text {
+    text-align: center;
+    color: #6B7280;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.form-data {
+    background-color: #F3F4F6;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.form-data ul {
+    list-style-type: none;
+    margin-top: 0.5rem;
+}
+
+.form-data li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--primary-light);
+}
+
+/* 未来的国家推荐卡片样式 */
+.country-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.country-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.country-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+.country-card-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem;
+    text-align: center;
+}
+
+.country-card-body {
+    padding: 1.5rem;
+}
+
+.country-card-score {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.country-card-features {
+    margin-top: 1rem;
+}
+
+.country-card-features li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.country-card-features li:before {
+    content: "✓";
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+/* 推荐结果卡片样式 */
+.result-card {
+    background-color: white;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.2rem;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .result-card h3 {
+    font-size: 1.25rem;
+    color: #1D4ED8;
+    margin-bottom: 0.5rem;
+  }
+  
+  .result-card p {
+    margin: 0.25rem 0;
+    color: #374151;
+    line-height: 1.5;
+  }
+  
+  .result-card strong {
+    color: #111827;
+  }
+  
+  .result-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Finder MVP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Market Finder MVP</h1>
+            <h2>30 秒找出你的高潜力海外客源市场</h2>
+        </header>
+        
+        <main>
+            <section class="form-container">
+                <form id="marketFinderForm">
+                    <div class="form-group">
+                        <label for="businessType">业务类型</label>
+                        <select id="businessType" name="businessType" required>
+                            <option value="" disabled selected>请选择...</option>
+                            <option value="hotel">酒店</option>
+                            <option value="guesthouse">民宿</option>
+                            <option value="scenic">景区</option>
+                            <option value="complex">旅游综合体</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="positioningTier">定位层级</label>
+                        <select id="positioningTier" name="positioningTier" required>
+                            <option value="" disabled selected>请选择...</option>
+                            <option value="budget">经济型</option>
+                            <option value="midrange">中端</option>
+                            <option value="highend">高端</option>
+                            <option value="luxury">奢华</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="locationType">位置类型</label>
+                        <select id="locationType" name="locationType" required>
+                            <option value="" disabled selected>请选择...</option>
+                            <option value="city">市中心</option>
+                            <option value="coastal">沿海地区</option>
+                            <option value="mountain">山地/自然区</option>
+                            <option value="historic">历史文化区</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>主要特色（可多选）</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="wellness" name="keyFeatures" value="wellness">
+                                <label for="wellness">养生健康</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="family" name="keyFeatures" value="family">
+                                <label for="family">亲子家庭</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cultural" name="keyFeatures" value="cultural">
+                                <label for="cultural">文化体验</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="nature" name="keyFeatures" value="nature">
+                                <label for="nature">自然探索</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="romantic" name="keyFeatures" value="romantic">
+                                <label for="romantic">浪漫度假</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="business" name="keyFeatures" value="business">
+                                <label for="business">商务会议</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="spendLevel">目标客户消费水平（可选）</label>
+                        <select id="spendLevel" name="spendLevel">
+                            <option value="" disabled selected>请选择...</option>
+                            <option value="low">低</option>
+                            <option value="medium">中</option>
+                            <option value="high">高</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group submit-container">
+                        <button type="button" id="analyze-btn">🔍 开始分析</button>
+                    </div>
+                </form>
+            </section>
+            
+            <section class="results-container">
+                <div id="results">
+                    <!-- 这里将通过JavaScript动态生成推荐国家结果 -->
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Powered by Aloha AI Lab</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
